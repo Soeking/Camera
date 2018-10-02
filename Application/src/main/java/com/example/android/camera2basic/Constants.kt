@@ -10,5 +10,5 @@ import java.util.*
 val form=SimpleDateFormat("yyyyMMddHHmmss")
 val data=Date(System.currentTimeMillis())
 
-@JvmField val REQUEST_CAMERA_PERMISSION = 1
+val REQUEST_CAMERA_PERMISSION = 1
 val PIC_FILE_NAME = "${form.format(data)}.jpg"

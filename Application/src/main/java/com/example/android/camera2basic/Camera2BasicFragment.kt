@@ -115,6 +115,8 @@ class Camera2BasicFragment : Fragment(), View.OnClickListener,
 
     private var sensorOrientation = 0
 
+    val REQUEST_CAMERA_PERMISSION = 1
+
     private val captureCallback = object : CameraCaptureSession.CaptureCallback() {
 
         private fun process(result: CaptureResult) {
