@@ -2,5 +2,13 @@
 
 package com.example.android.camera2basic
 
+import java.text.DateFormat
+import java.text.Format
+import java.text.SimpleDateFormat
+import java.util.*
+
+val form=SimpleDateFormat("yyyyMMddHHmmss")
+val data=Date(System.currentTimeMillis())
+
 @JvmField val REQUEST_CAMERA_PERMISSION = 1
-@JvmField val PIC_FILE_NAME = "pic.jpg"
+val PIC_FILE_NAME = "${form.format(data)}.jpg"

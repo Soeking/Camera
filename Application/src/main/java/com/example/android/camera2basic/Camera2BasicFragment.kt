@@ -176,13 +176,11 @@ class Camera2BasicFragment : Fragment(), View.OnClickListener,
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         view.findViewById<View>(R.id.picture).setOnClickListener(this)
-        view.findViewById<View>(R.id.info).setOnClickListener(this)
         textureView = view.findViewById(R.id.texture)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        //file = File(activity.getExternalFilesDir(null), PIC_FILE_NAME)
         file = File("/storage/emulated/0/DCIM/Camera2/", PIC_FILE_NAME)
     }
 
@@ -516,14 +514,6 @@ class Camera2BasicFragment : Fragment(), View.OnClickListener,
     override fun onClick(view: View) {
         when (view.id) {
             R.id.picture -> lockFocus()
-            R.id.info -> {
-                if (activity != null) {
-                    AlertDialog.Builder(activity)
-                            .setMessage(R.string.intro_message)
-                            .setPositiveButton(android.R.string.ok, null)
-                            .show()
-                }
-            }
         }
     }
 
@@ -585,7 +575,7 @@ class Camera2BasicFragment : Fragment(), View.OnClickListener,
                     }
                 }
             }
-            
+
             if (bigEnough.size > 0) {
                 return Collections.min(bigEnough, CompareSizesByArea())
             } else if (notBigEnough.size > 0) {
