@@ -9,4 +9,6 @@ class button:Fragment(){
     val form= SimpleDateFormat("yyyyMMddHHmmss")
 
     val PIC_FILE_NAME = "${com.example.android.camera2basic.form.format(data)}.jpg"
+
+    
 }
