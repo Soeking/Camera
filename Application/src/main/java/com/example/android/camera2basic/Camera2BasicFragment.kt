@@ -1,8 +1,8 @@
 package com.example.android.camera2basic
 
 import android.Manifest
-import android.app.AlertDialog
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.content.res.Configuration
 import android.graphics.ImageFormat
@@ -20,6 +20,7 @@ import android.hardware.camera2.CaptureRequest
 import android.hardware.camera2.CaptureResult
 import android.hardware.camera2.TotalCaptureResult
 import android.media.ImageReader
+import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.os.HandlerThread
@@ -320,7 +321,7 @@ class Camera2BasicFragment : Fragment(), View.OnClickListener,
         configureTransform(width, height)
         val manager = activity.getSystemService(Context.CAMERA_SERVICE) as CameraManager
         try {
-            if (!cameraOpenCloseLock.tryAcquire(100, TimeUnit.MILLISECONDS)) {
+            if (!cameraOpenCloseLock.tryAcquire(50, TimeUnit.MILLISECONDS)) {
                 throw RuntimeException("Time out waiting to lock camera opening.")
             }
             manager.openCamera(cameraId, stateCallback, backgroundHandler)
@@ -483,6 +484,9 @@ class Camera2BasicFragment : Fragment(), View.OnClickListener,
                         result: TotalCaptureResult) {
                     activity.showToast("Saved: $file")
                     Log.d(TAG, file.toString())
+                    val contentUri = Uri.fromFile(file)
+                    val mediaScanIntent = Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, contentUri)
+                    context.sendBroadcast(mediaScanIntent)
                     unlockFocus()
                 }
             }
@@ -518,8 +522,8 @@ class Camera2BasicFragment : Fragment(), View.OnClickListener,
         when (view.id) {
             R.id.picture ->{
                 val form= SimpleDateFormat("yyyyMMddHHmmss")
-                var data= Date(System.currentTimeMillis())
-                var PIC_FILE_NAME = "${form.format(data)}.jpg"
+                val data= Date(System.currentTimeMillis())
+                val PIC_FILE_NAME = "${form.format(data)}.jpg"
                 file = File("/storage/emulated/0/DCIM/Camera2/", PIC_FILE_NAME)
                 lockFocus()
             }

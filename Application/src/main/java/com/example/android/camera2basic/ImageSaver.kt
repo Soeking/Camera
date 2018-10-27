@@ -1,12 +1,11 @@
 package com.example.android.camera2basic
 
+
 import android.media.Image
 import android.util.Log
-
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
-import java.nio.ByteBuffer
 
 internal class ImageSaver(
         private val image: Image,
