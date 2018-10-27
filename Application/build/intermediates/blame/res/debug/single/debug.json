@@ -876,10 +876,6 @@
         "source": "C:\\Users\\user\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\1e13f6d1c3acfbdfed903bf392f07948\\res\\drawable-xhdpi-v4\\abc_ic_star_black_36dp.png"
     },
     {
-        "merged": "C:\\praand\\Camera\\Application\\build\\intermediates\\res\\merged\\debug\\layout_button.xml.flat",
-        "source": "C:\\praand\\Camera\\Application\\src\\debug\\res\\layout\\button.xml"
-    },
-    {
         "merged": "C:\\praand\\Camera\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",
         "source": "C:\\Users\\user\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\1e13f6d1c3acfbdfed903bf392f07948\\res\\drawable-xhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png"
     },

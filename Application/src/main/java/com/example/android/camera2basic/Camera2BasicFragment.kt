@@ -35,8 +35,8 @@ import android.view.TextureView
 import android.view.View
 import android.view.ViewGroup
 import java.io.File
-import java.util.Arrays
-import java.util.Collections
+import java.text.SimpleDateFormat
+import java.util.*
 import java.util.concurrent.Semaphore
 import java.util.concurrent.TimeUnit
 import kotlin.collections.ArrayList
@@ -115,7 +115,7 @@ class Camera2BasicFragment : Fragment(), View.OnClickListener,
 
     private var sensorOrientation = 0
 
-    val REQUEST_CAMERA_PERMISSION = 1
+    private val REQUEST_CAMERA_PERMISSION = 1
 
     private val captureCallback = object : CameraCaptureSession.CaptureCallback() {
 
@@ -181,10 +181,11 @@ class Camera2BasicFragment : Fragment(), View.OnClickListener,
         textureView = view.findViewById(R.id.texture)
     }
 
+    /**
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         file = File("/storage/emulated/0/DCIM/Camera2/", PIC_FILE_NAME)
-    }
+    }*/
 
     override fun onResume() {
         super.onResume()
@@ -243,7 +244,7 @@ class Camera2BasicFragment : Fragment(), View.OnClickListener,
                         Arrays.asList(*map.getOutputSizes(ImageFormat.JPEG)),
                         CompareSizesByArea())
                 imageReader = ImageReader.newInstance(largest.width, largest.height,
-                        ImageFormat.JPEG, /*maxImages*/ 2).apply {
+                        ImageFormat.JPEG,2).apply {
                     setOnImageAvailableListener(onImageAvailableListener, backgroundHandler)
                 }
 
@@ -319,7 +320,7 @@ class Camera2BasicFragment : Fragment(), View.OnClickListener,
         configureTransform(width, height)
         val manager = activity.getSystemService(Context.CAMERA_SERVICE) as CameraManager
         try {
-            if (!cameraOpenCloseLock.tryAcquire(2500, TimeUnit.MILLISECONDS)) {
+            if (!cameraOpenCloseLock.tryAcquire(100, TimeUnit.MILLISECONDS)) {
                 throw RuntimeException("Time out waiting to lock camera opening.")
             }
             manager.openCamera(cameraId, stateCallback, backgroundHandler)
@@ -515,7 +516,13 @@ class Camera2BasicFragment : Fragment(), View.OnClickListener,
 
     override fun onClick(view: View) {
         when (view.id) {
-            R.id.picture -> lockFocus()
+            R.id.picture ->{
+                val form= SimpleDateFormat("yyyyMMddHHmmss")
+                var data= Date(System.currentTimeMillis())
+                var PIC_FILE_NAME = "${form.format(data)}.jpg"
+                file = File("/storage/emulated/0/DCIM/Camera2/", PIC_FILE_NAME)
+                lockFocus()
+            }
         }
     }
 
@@ -554,7 +561,7 @@ class Camera2BasicFragment : Fragment(), View.OnClickListener,
 
         private val MAX_PREVIEW_HEIGHT = 1080
 
-        @JvmStatic private fun chooseOptimalSize(
+        private fun chooseOptimalSize(
                 choices: Array<Size>,
                 textureViewWidth: Int,
                 textureViewHeight: Int,
@@ -588,6 +595,6 @@ class Camera2BasicFragment : Fragment(), View.OnClickListener,
             }
         }
 
-        @JvmStatic fun newInstance(): Camera2BasicFragment = Camera2BasicFragment()
+        fun newInstance(): Camera2BasicFragment = Camera2BasicFragment()
     }
 }
