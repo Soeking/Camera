@@ -2,5 +2,6 @@
 <resources>
     <style name="MaterialTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowFullscreen">true</item>
+        <item name="metaButtonBarStyle">?android:attr/buttonBarStyle</item>
     </style>
 </resources>
