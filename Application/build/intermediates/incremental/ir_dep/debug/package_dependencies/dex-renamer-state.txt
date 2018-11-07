@@ -1,4 +1,4 @@
-#Sat Oct 27 19:22:35 JST 2018
-base.0=C\:\\praand\\Camera\\Application\\build\\intermediates\\transforms\\dexMerger\\debug\\10
+#Wed Oct 31 09:46:41 JST 2018
+base.0=C\:\\praand\\yakudo\\Application\\build\\intermediates\\transforms\\dexMerger\\debug\\10
 path.0=classes.dex
 renamed.0=classes.dex

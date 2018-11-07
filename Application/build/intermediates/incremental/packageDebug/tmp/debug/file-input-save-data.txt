@@ -1,18 +1,18 @@
 #Internal package file, do not edit.
-#Sat Oct 27 20:31:26 JST 2018
+#Wed Oct 31 09:46:43 JST 2018
 4.path=classes.dex
 8.set=DEX
 6.path=classes.dex
 0.baseType=DIRECTORY
 10.path=classes.dex
 5.baseType=DIRECTORY
-1.base=C\:\\praand\\Camera\\Application\\build\\intermediates\\transforms\\dexMerger\\debug\\15
+1.base=C\:\\praand\\yakudo\\Application\\build\\intermediates\\transforms\\dexMerger\\debug\\21
 8.path=classes.dex
-3.base=C\:\\praand\\Camera\\Application\\build\\intermediates\\transforms\\dexMerger\\debug\\13
+3.base=C\:\\praand\\yakudo\\Application\\build\\intermediates\\transforms\\dexMerger\\debug\\12
 4.set=DEX
-5.base=C\:\\praand\\Camera\\Application\\build\\intermediates\\transforms\\dexMerger\\debug\\20
-7.base=C\:\\praand\\Camera\\Application\\build\\intermediates\\transforms\\dexMerger\\debug\\16
-9.base=C\:\\praand\\Camera\\Application\\build\\intermediates\\transforms\\dexMerger\\debug\\14
+5.base=C\:\\praand\\yakudo\\Application\\build\\intermediates\\transforms\\dexMerger\\debug\\11
+7.base=C\:\\praand\\yakudo\\Application\\build\\intermediates\\transforms\\dexMerger\\debug\\17
+9.base=C\:\\praand\\yakudo\\Application\\build\\intermediates\\transforms\\dexMerger\\debug\\19
 1.baseType=DIRECTORY
 0.set=DEX
 6.baseType=DIRECTORY
@@ -25,16 +25,16 @@
 3.path=classes.dex
 10.set=DEX
 5.path=classes.dex
-0.base=C\:\\praand\\Camera\\Application\\build\\intermediates\\transforms\\dexMerger\\debug\\12
+0.base=C\:\\praand\\yakudo\\Application\\build\\intermediates\\transforms\\dexMerger\\debug\\13
 7.path=classes.dex
 9.path=classes.dex
 6.set=DEX
-2.base=C\:\\praand\\Camera\\Application\\build\\intermediates\\transforms\\dexMerger\\debug\\21
-4.base=C\:\\praand\\Camera\\Application\\build\\intermediates\\transforms\\dexMerger\\debug\\11
+2.base=C\:\\praand\\yakudo\\Application\\build\\intermediates\\transforms\\dexMerger\\debug\\15
+4.base=C\:\\praand\\yakudo\\Application\\build\\intermediates\\transforms\\dexMerger\\debug\\20
 3.baseType=DIRECTORY
-6.base=C\:\\praand\\Camera\\Application\\build\\intermediates\\transforms\\dexMerger\\debug\\18
-10.base=C\:\\praand\\Camera\\Application\\build\\intermediates\\transforms\\dexMerger\\debug\\17
-8.base=C\:\\praand\\Camera\\Application\\build\\intermediates\\transforms\\dexMerger\\debug\\19
+6.base=C\:\\praand\\yakudo\\Application\\build\\intermediates\\transforms\\dexMerger\\debug\\18
+10.base=C\:\\praand\\yakudo\\Application\\build\\intermediates\\transforms\\dexMerger\\debug\\16
+8.base=C\:\\praand\\yakudo\\Application\\build\\intermediates\\transforms\\dexMerger\\debug\\14
 2.set=DEX
 8.baseType=DIRECTORY
 9.set=DEX
