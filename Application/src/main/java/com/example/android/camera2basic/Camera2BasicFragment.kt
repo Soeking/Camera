@@ -182,12 +182,6 @@ class Camera2BasicFragment : Fragment(), View.OnClickListener,
         textureView = view.findViewById(R.id.texture)
     }
 
-    /**
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        file = File("/storage/emulated/0/DCIM/Camera2/", PIC_FILE_NAME)
-    }*/
-
     override fun onResume() {
         super.onResume()
         startBackgroundThread()
